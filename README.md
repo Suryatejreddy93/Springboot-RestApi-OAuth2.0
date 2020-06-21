@@ -17,12 +17,24 @@ run -> clean install spring-boot:run
 OR
 Run the application directly after running mvn install
 
-**Steps on how to generate Oauth Access Token and use it while accessing the service**
-
-https://dzone.com/articles/securing-rest-services-with-oauth2-in-springboot-1
-
 **Application Context path:** 
 http://localhost:8080/retail
+
+**Steps on how to generate Oauth Access Token and use it while accessing the service**
+
+To get access token: 
+POST request to http://localhost:8080/retail/oauth/token
+body: 
+   password:secret
+   username:user
+   grant_type:password
+Authorization:
+   Username: client
+   password: password
+
+You will get a access token which will expire in 45 minutes.
+
+Now in the main service endpoint request, Use this token inside Authorization Bearer Token to access the service successfully.
 
 **Rewards Endpoint:** http://localhost:8080/retail/rewards
 **Endpoint Type:** POST
