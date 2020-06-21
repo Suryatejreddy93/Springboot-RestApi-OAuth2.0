@@ -18,6 +18,7 @@ OR
 Run the application directly after running mvn install
 
 **Steps on how to generate Oauth Access Token and use it while accessing the service**
+
 https://dzone.com/articles/securing-rest-services-with-oauth2-in-springboot-1
 
 **Application Context path:** 
