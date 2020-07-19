@@ -29,6 +29,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .withClient("client")
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
                 .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "USER")
+                .accessTokenValiditySeconds(60)
                 .scopes("read", "write")
                 .autoApprove(true)
                 .secret(passwordEncoder().encode("password"));
